@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Screen Guard</string>
+    <string name="header_title">حماية الهاتف من الاعلانات الاجبارية</string>
+    <string name="status_off">الحماية غير مفعلة</string>
+    <string name="status_on">الحماية تعمل بامتياز</string>
+    <string name="desc_off">المراقبة متوقفة حاليا</string>
+    <string name="desc_on">جاري مراقبة الشاشة الان هاتفك في امان</string>
+    <string name="btn_start">START تشغيل</string>
+    <string name="btn_stop">OFF ايقاف</string>
+    <string name="log_title">التطبيقات المشبوهة التي تم حظرها</string>
+    <string name="log_empty">لم يتم رصد اي هجوم حتى الان</string>
+    <string name="accessibility_desc">لتمكين التطبيق من مراقبة الشاشة واغلاق الاعلانات الخبيثة فور ظهورها التطبيق يعمل بدون انترنت نهائيا</string>
+    <string name="permission_needed">يجب تفعيل صلاحية امكانية الوصول</string>
+    <string name="go_settings">فتح الاعدادات</string>
+    <string name="whitelist_info">التطبيق يتجاهل تطبيقات النظام ولوحة المفاتيح وتطبيق الاتصال</string>
+    <string name="attack_notification_title">تم صد هجوم اعلاني</string>
+    <string name="attack_notification_text">التطبيق المسبب هو %1$s تم اغلاقه تلقائيا</string>
+    <string name="clear_logs">مسح السجل</string>
+</resources>
