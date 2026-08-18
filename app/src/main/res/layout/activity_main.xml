@@ -19,8 +19,7 @@
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:src="@drawable/ic_launcher_foreground"
-                android:background="@color/primary_dark"
-                android:padding="6dp"/>
+                android:background="@color/primary_dark" />
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -64,7 +63,7 @@
             android:orientation="horizontal"
             android:layout_marginTop="16dp"
             app:layout_constraintTop_toBottomOf="@id/statusCard">
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnStart"
                 android:layout_width="0dp"
                 android:layout_height="56dp"
@@ -73,9 +72,8 @@
                 android:background="@drawable/bg_button_start"
                 android:text="@string/btn_start"
                 android:textColor="#FFFFFF"
-                android:textStyle="bold"
-                android:backgroundTint="@null"/>
-            <Button
+                android:textStyle="bold"/>
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnStop"
                 android:layout_width="0dp"
                 android:layout_height="56dp"
@@ -84,8 +82,7 @@
                 android:background="@drawable/bg_button_stop"
                 android:text="@string/btn_stop"
                 android:textColor="#FFFFFF"
-                android:textStyle="bold"
-                android:backgroundTint="@null"/>
+                android:textStyle="bold"/>
         </LinearLayout>
         <TextView
             android:id="@+id/tvLogTitle"
@@ -107,6 +104,7 @@
             android:textColor="@color/text_secondary"
             app:layout_constraintTop_toBottomOf="@id/tvLogTitle"/>
         <ScrollView
+            android:id="@+id/logScroll"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:layout_marginTop="12dp"
@@ -121,15 +119,14 @@
                 android:textSize="14sp"
                 android:textColor="@color/text_primary"/>
         </ScrollView>
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnClear"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginTop="12dp"
             android:text="@string/clear_logs"
-            android:backgroundTint="@color/border_light"
+            android:background="@drawable/bg_card"
             android:textColor="@color/text_secondary"
-            app:layout_constraintTop_toBottomOf="@id/tvLogTitle"
-            android:layout_marginBottom="20dp"/>
+            app:layout_constraintTop_toBottomOf="@id/logScroll"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
