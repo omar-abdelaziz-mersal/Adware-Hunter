@@ -3,22 +3,18 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
-import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatButton
 import androidx.core.content.ContextCompat
 class MainActivity : AppCompatActivity() {
     private lateinit var tvStatus: TextView
     private lateinit var tvDesc: TextView
     private lateinit var tvLogs: TextView
     private lateinit var statusCard: android.view.View
-    private val requestPermissionLauncher = registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
-        if (!isGranted) {
-            Toast.makeText(this, "الاشعارات مهمة لمعرفة الهجمات", Toast.LENGTH_LONG).show()
-        }
-    }
+    private val requestPermissionLauncher = registerForActivityResult(ActivityResultContracts.RequestPermission()) { }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -26,10 +22,9 @@ class MainActivity : AppCompatActivity() {
         tvDesc = findViewById(R.id.tvDesc)
         tvLogs = findViewById(R.id.tvLogs)
         statusCard = findViewById(R.id.statusCard)
-        val btnStart = findViewById<Button>(R.id.btnStart)
-        val btnStop = findViewById<Button>(R.id.btnStop)
-        val btnClear = findViewById<Button>(R.id.btnClear)
-        val btnSettings = findViewById<Button>(R.id.btnClear)
+        val btnStart = findViewById<AppCompatButton>(R.id.btnStart)
+        val btnStop = findViewById<AppCompatButton>(R.id.btnStop)
+        val btnClear = findViewById<AppCompatButton>(R.id.btnClear)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             requestPermissionLauncher.launch(android.Manifest.permission.POST_NOTIFICATIONS)
         }
@@ -49,9 +44,6 @@ class MainActivity : AppCompatActivity() {
         btnClear.setOnClickListener {
             AppPreferences.clearLogs(this)
             updateUI()
-        }
-        findViewById<android.view.View>(R.id.tvLogTitle).setOnClickListener {
-            openAccessibilitySettings()
         }
     }
     override fun onResume() {
@@ -80,7 +72,6 @@ class MainActivity : AppCompatActivity() {
         return enabled.contains(service)
     }
     private fun openAccessibilitySettings() {
-        val intent = Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS)
-        startActivity(intent)
+        startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
     }
 }
