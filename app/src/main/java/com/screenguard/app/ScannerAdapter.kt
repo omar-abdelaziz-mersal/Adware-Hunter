@@ -16,9 +16,9 @@ class ScannerAdapter(private val items: List<ScannerActivity.SuspiciousApp>, pri
     }
     override fun getItemCount() = items.size
     override fun onBindViewHolder(h: VH, pos: Int) {
-        val it = items[pos]
-        h.tvName.text = "${it.label} (${it.pkg})"
-        h.tvReason.text = it.reason
-        h.btnDel.setOnClickListener { onUninstall(it.pkg) }
+        val item = items[pos]
+        h.tvName.text = "${item.label} (${item.pkg})"
+        h.tvReason.text = item.reason
+        h.btnDel.setOnClickListener { onUninstall(item.pkg) }
     }
 }
